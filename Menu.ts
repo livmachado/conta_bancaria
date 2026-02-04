@@ -1,14 +1,34 @@
 import input from "readline-sync";
-import { colors } from './src/util/Colors';
+import { Colors } from './src/util/Colors';
+import { Conta } from "./src/model/Conta";
 
 export function main() {
 
     let option: number;
 
+    //Instanciar Objetos da Classe Conta
+
+    const c1 = new Conta(1, 1234, "Sofia", 1, 100000.00)
+    // Testes do Método Sacar
+    console.log("Sacar 100,00: ", c1.sacar(100.00));
+    console.log("Sacar 200000.00: ", c1.sacar(200000.00));
+    console.log("Sacar 0.00: ", c1.sacar(0.00));
+
+    // Testes do Método Depositar
+    console.log("Depositar -10.00: ");
+    c1.depositar(-10.00);
+
+    console.log("Depositar 500.00: ");
+    c1.depositar(500.00);
+
+    c1.visualizar();
+    
+
     while (true) {
         
-        console.log(colors.bg.black, colors.fg.redstrong, 
-                    "****************************************************");
+        console.log(Colors.bg.white, Colors.fg.redstrong, 
+                    "");
+        console.log(" *****************************************************");
         console.log("                                                      ");
         console.log("                    BRADEZCO COM Z                    ");
         console.log("                                                      ");
@@ -26,61 +46,61 @@ export function main() {
         console.log("                                                      ");
         console.log(" *****************************************************");
         console.log("                                                     ",
-        colors.reset);
+        Colors.reset);
 
         console.log("Entre com a opção desejada: ");
         option = input.questionInt("");
 
         if (option === 9) {
-            console.log(colors.fg.redstrong, "\nBradezco - Você primeiro");
+            console.log(Colors.fg.redstrong, "\nBradezco - Você em primeiro");
             about();
-            console.log(colors.reset,"")
+            console.log(Colors.reset,"")
             process.exit(0);
         }
 
         switch (option) {
             case 1:
-                console.log(colors.fg.redstrong, "\n\nCriar Conta\n\n");
-                console.log(colors.reset,"")
+                console.log(Colors.fg.redstrong, "\n\nCriar Conta\n\n");
+                console.log(Colors.reset,"")
 
                 break;
             case 2:
-                console.log(colors.fg.redstrong, "\n\nListar todas as Contas\n\n");
-                console.log(colors.reset,"")
+                console.log(Colors.fg.redstrong, "\n\nListar todas as Contas\n\n");
+                console.log(Colors.reset,"")
 
                 break;
             case 3:
-                console.log(colors.fg.redstrong, "\n\nConsultar dados da Conta - por número\n\n");
-                console.log(colors.reset,"")
+                console.log(Colors.fg.redstrong, "\n\nConsultar dados da Conta - por número\n\n");
+                console.log(Colors.reset,"")
 
                 break;
             case 4:
-                console.log(colors.fg.redstrong, "\n\nAtualizar dados da Conta\n\n");
-                console.log(colors.reset,"")
+                console.log(Colors.fg.redstrong, "\n\nAtualizar dados da Conta\n\n");
+                console.log(Colors.reset,"")
                 break;
             case 5:
-                console.log(colors.fg.redstrong, "\n\nApagar uma Conta\n\n");
-                console.log(colors.reset,"")
+                console.log(Colors.fg.redstrong, "\n\nApagar uma Conta\n\n");
+                console.log(Colors.reset,"")
 
                 break;
             case 6:
-                console.log(colors.fg.redstrong, "\n\nSaque\n\n");
-                console.log(colors.reset,"")
+                console.log(Colors.fg.redstrong, "\n\nSaque\n\n");
+                console.log(Colors.reset,"")
 
                 break;
             case 7:
-                console.log(colors.fg.redstrong, "\n\nDepósito\n\n");
-                console.log(colors.reset,"")
+                console.log(Colors.fg.redstrong, "\n\nDepósito\n\n");
+                console.log(Colors.reset,"")
 
                 break;
             case 8:
-                console.log(colors.fg.redstrong, "\n\nTransferência entre Contas\n\n");
-                console.log(colors.reset,"")
+                console.log(Colors.fg.redstrong, "\n\nTransferência entre Contas\n\n");
+                console.log(Colors.reset,"")
 
                 break;
             default:
-                console.log(colors.fg.redstrong, "\nOpção Inválida!\n");
-                console.log(colors.reset,"")
+                console.log(Colors.fg.redstrong, "\nOpção Inválida!\n");
+                console.log(Colors.reset,"")
 
                 break;
         }
