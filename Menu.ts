@@ -9,23 +9,23 @@ export function main() {
         
         console.log(colors.bg.black, colors.fg.redstrong, 
                     "****************************************************");
-        console.log("                                                     ");
-        console.log("                   BRADEZCO COM Z                    ");
-        console.log("                                                     ");
-        console.log("*****************************************************");
-        console.log("                                                     ");
-        console.log("            1 - Criar Conta                          ");
-        console.log("            2 - Listar todas as Contas               ");
-        console.log("            3 - Buscar Conta por Numero              ");
-        console.log("            4 - Atualizar Dados da Conta             ");
-        console.log("            5 - Apagar Conta                         ");
-        console.log("            6 - Sacar                                ");
-        console.log("            7 - Depositar                            ");
-        console.log("            8 - Transferir valores entre Contas      ");
-        console.log("            9 - Sair                                 ");
-        console.log("                                                     ");
-        console.log("*****************************************************");
-        console.log("                                                    ",
+        console.log("                                                      ");
+        console.log("                    BRADEZCO COM Z                    ");
+        console.log("                                                      ");
+        console.log(" *****************************************************");
+        console.log("                                                      ");
+        console.log("             1 - Criar Conta                          ");
+        console.log("             2 - Listar todas as Contas               ");
+        console.log("             3 - Buscar Conta por Numero              ");
+        console.log("             4 - Atualizar Dados da Conta             ");
+        console.log("             5 - Apagar Conta                         ");
+        console.log("             6 - Sacar                                ");
+        console.log("             7 - Depositar                            ");
+        console.log("             8 - Transferir valores entre Contas      ");
+        console.log("             9 - Sair                                 ");
+        console.log("                                                      ");
+        console.log(" *****************************************************");
+        console.log("                                                     ",
         colors.reset);
 
         console.log("Entre com a opção desejada: ");
