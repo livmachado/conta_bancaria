@@ -1,5 +1,5 @@
-import input from "readline-sync";
 import { Colors } from './src/util/Colors';
+import { Input } from "./src/util/Input";
 import { Conta } from "./src/model/Conta";
 
 export function main() {
@@ -49,7 +49,7 @@ export function main() {
         Colors.reset);
 
         console.log("Entre com a opção desejada: ");
-        option = input.questionInt("");
+        option = Input.questionInt("");
 
         if (option === 9) {
             console.log(Colors.fg.redstrong, "\nBradezco - Você em primeiro");
@@ -62,40 +62,48 @@ export function main() {
             case 1:
                 console.log(Colors.fg.redstrong, "\n\nCriar Conta\n\n");
                 console.log(Colors.reset,"")
+                keyPress()
 
                 break;
             case 2:
                 console.log(Colors.fg.redstrong, "\n\nListar todas as Contas\n\n");
                 console.log(Colors.reset,"")
+                keyPress()
 
                 break;
             case 3:
                 console.log(Colors.fg.redstrong, "\n\nConsultar dados da Conta - por número\n\n");
                 console.log(Colors.reset,"")
+                keyPress()
 
                 break;
             case 4:
                 console.log(Colors.fg.redstrong, "\n\nAtualizar dados da Conta\n\n");
                 console.log(Colors.reset,"")
+                keyPress()
                 break;
             case 5:
                 console.log(Colors.fg.redstrong, "\n\nApagar uma Conta\n\n");
                 console.log(Colors.reset,"")
+                keyPress()
 
                 break;
             case 6:
                 console.log(Colors.fg.redstrong, "\n\nSaque\n\n");
                 console.log(Colors.reset,"")
+                keyPress()
 
                 break;
             case 7:
                 console.log(Colors.fg.redstrong, "\n\nDepósito\n\n");
                 console.log(Colors.reset,"")
+                keyPress()
 
                 break;
             case 8:
                 console.log(Colors.fg.redstrong, "\n\nTransferência entre Contas\n\n");
                 console.log(Colors.reset,"")
+                keyPress()
 
                 break;
             default:
@@ -117,5 +125,11 @@ function about(): void {
     console.log("*****************************************************");
 }
 
+/* Função de pausa entre as opções do menu */
+function keyPress(): void {
+    console.log(Colors.reset,"\nPressione enter para continuar...");
+    Input.prompt();
+}
+ 
 
 main();
