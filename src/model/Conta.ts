@@ -1,7 +1,8 @@
-import { Colors } from '../util/Colors';
+import { Colors } from "../util/Colors";
 
-export class Conta{
-    //Atributos da Classe
+export abstract class Conta{
+
+    // Atributos da Classe
     private _numero: number;
     private _agencia: number;
     private _titular: string;
@@ -61,6 +62,11 @@ export class Conta{
 
     public sacar(valor: number): boolean {
 
+        if(valor <= 0){
+            console.log(Colors.fg.red, "\nO valor deve ser positivo", Colors.reset);
+            return false;
+        }
+
         if(valor > this._saldo){
             console.log(Colors.fg.redstrong, "Saldo Insuficiente!", Colors.reset);
             return false;
@@ -89,17 +95,16 @@ export class Conta{
                 tipo = "Conta Poupança";
             break;
             default:
-                tipo= "Tipo Inválido"
+                tipo = "Tipo Inválido";
         }
-        console.log("\n**********************************");
-        console.log("          DADOS DA CONTA          ");
-        console.log("**********************************");
-        console.log(`Número da conta: ${this._numero}`);
-        console.log(`Número da agência: ${this.agencia}`);
-        console.log(`Número da titular: ${this._titular}`);
-        console.log(`Tipo da conta:  ${tipo}`);
-        console.log(`Saldo da conta: ${this.saldo}`);
-    }
-    
 
+        console.log("\n************************************");
+        console.log("        DADOS DA CONTA              ");
+        console.log("************************************");
+        console.log(`Número da conta: ${this._numero}`);
+        console.log(`Número da agência: ${this._agencia}`);
+        console.log(`Nome do titular: ${this._titular}`);
+        console.log(`Tipo da conta: ${tipo}`);
+        console.log(`Saldo da conta: R$ ${this._saldo.toFixed(2)}`);
+    }
 }
