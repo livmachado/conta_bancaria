@@ -39,14 +39,14 @@ export class ContaCorrente extends Conta {
 			return false
 		}
 
-		if (valor > (this.saldo + this._limite)) {
+		if (valor < (this.saldo + this._limite)) {
 			console.log(
 				Colors.fg.red,
 				'\nSaldo Insuficiente!',
 				Colors.reset,
 			)
 			return false
-		}
+		} else if (valor )
 
 		this.saldo -= valor
 		return true

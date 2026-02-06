@@ -67,7 +67,7 @@ export abstract class Conta{
             return false;
         }
 
-        if(valor > this._saldo){
+        if(valor < this._saldo){
             console.log(Colors.fg.redstrong, "Saldo Insuficiente!", Colors.reset);
             return false;
         }
