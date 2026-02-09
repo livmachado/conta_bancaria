@@ -1,4 +1,5 @@
 import { Colors } from '../util/Colors'
+import { formatarMoeda } from '../util/Currency';
 import { Conta } from './Conta'
 
 export class ContaCorrente extends Conta {
@@ -39,7 +40,7 @@ export class ContaCorrente extends Conta {
 			return false
 		}
 
-		if (valor < (this.saldo + this._limite)) {
+		if (valor > (this.saldo + this._limite)) {
 			console.log(
 				Colors.fg.red,
 				'\nSaldo Insuficiente!',
@@ -55,6 +56,6 @@ export class ContaCorrente extends Conta {
 	// Método visualizar sobrescrito (Polimorfismo)
 	public visualizar(): void {
 		super.visualizar()
-		console.log(`Limite da conta: R$ ${this._limite.toFixed(2)}`)
+		console.log(`Limite da conta: ${formatarMoeda(this._limite)}`)
 	}
 }
